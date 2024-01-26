@@ -1,8 +1,8 @@
-# ExternalBufferOverFlow
- 
-SetWindowsHookEx installs a hook routine into the hook chain, and it is invoked whenever specific events are triggered.
-Since Windows has no security regarding this function, we can abuse it to let any application which handles input through WndProc call our payload function.
+# Introduction
+The SetWindowsHookEx function in Windows allows the installation of a hook routine into the hook chain, triggering specific events. Due to the absence of security checks, this function can be exploited to manipulate any application handling input through WndProc, without resorting to code injection techniques.
 
-This happens without any code injection.
+# Disclaimer
+Caution: The following demonstration is intended for educational purposes only. Ethical and legal considerations must be observed when exploring software vulnerabilities. Unauthorized exploitation is strictly prohibited.
 
-In the example code We set the hook for the given application (through its process id) and execute a payload which causes a buffer overflow leading to a crash or freeze of the target application.
+# Overview
+This repository provides a simple example showcasing the potential misuse of SetWindowsHookEx. By setting the hook for a specified application (via its process ID), we demonstrate how an external payload can be executed without code injection. In the example code, a basic payload is executed, causing a buffer overflow that leads to a crash or freeze of the target application.
